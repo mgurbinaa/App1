@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="estilos.css">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+        <div id="display">
+            <input type="text" placeholder="0" id="pantalla">
+        </div>
+        <div id="botones">
+            <button class="nums ripple" onclick="agregar('7')">7</button>
+            <button class="nums ripple" onclick="agregar('8')">8</button>
+            <button class="nums ripple" onclick="agregar('9')">9</button>
+            <button class="sign ripple" onclick="agregar('+')">+</button>
+            <button class="nums ripple" onclick="agregar('4')">4</button>
+            <button class="nums ripple" onclick="agregar('5')">5</button>
+            <button class="nums ripple" onclick="agregar('6')">6</button>
+            <button class="sign ripple" onclick="agregar('-')">-</button>
+            <button class="nums ripple" onclick="agregar('1')">1</button>
+            <button class="nums ripple" onclick="agregar('2')">2</button>
+            <button class="nums ripple" onclick="agregar('3')">3</button>
+            <button class="sign ripple" onclick="agregar('*')">*</button>
+            <button class="nums ripple" onclick="borrar()">C</button>
+            <button class="nums ripple" onclick="agregar('0')">0</button>
+            <button class="nums ripple" onclick="agregar('.')">.</button>
+            <button class="sign ripple" onclick="igual()">=</button>
+        </div>
+        
+        
+        <script>
+            function agregar(caracter)
+            {
+                document.getElementById('pantalla').value+=caracter;
+            }
+            
+            function borrar()
+            {
+                document.getElementById('pantalla').value="";
+            }
+            
+            function igual()
+            {
+                cadena = document.getElementById('pantalla').value;
+                if(cadena=='007')
+                {
+                    window.location.assign('codigo.html');
+                    
+                }
+                if(cadena=='')
+                {
+                    cadena=0;
+                }
+                total = eval(cadena);
+                document.getElementById('pantalla').value=total;
+            }
+        </script>
+    </body>
+</html>
